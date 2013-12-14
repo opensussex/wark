@@ -8,6 +8,7 @@
 			parent::__construct($db);
 			parent::setTable($this->table);
 			parent::setNames($this->set_names);
+			parent::setColumns();
 		}
 						
 		public function example(){
