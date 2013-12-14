@@ -7,6 +7,7 @@
  	class Model{
  		private $db = null;
  		private $table = null;
+ 		private $columns = null;
 		public $db_handle = null;
  		public function __construct($db = null){
  			$this->db = $db;
@@ -27,21 +28,25 @@
 			echo $this->table;
 		}
 
-		public function setNames($ser_names){
-			$this->db_handle->exec($this->set_names);
+		public function setColumns(){
+
+			$sql = "DESCRIBE $this->table";
+			$st = $this->db_handle->prepare($sql);
+			
+			if($st->execute()){
+				$columns = $st->fetchAll();
+				if(count($columns > 0)){
+					$this->columns = $columns;	
+				}
+			}
 		}
 
 		public function getColumns(){
-
-			$sql = "SELECT * FROM $this->table LIMIT 0";
-			$st = $this->db_handle->prepare($sql);
-			$st->execute();
-			for ($i = 0; $i < $st->columnCount(); $i++) {
-			    $col = $st->getColumnMeta($i);
-			    $columns[] = $col['name'];
+			if($this->columns != null){
+				return $this->columns;
+			}else{
+				return false;
 			}
-			print_r($columns);
-			
 		}
  	}
 ?>
