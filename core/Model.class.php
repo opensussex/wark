@@ -34,7 +34,7 @@
 			$st = $this->db_handle->prepare($sql);
 			
 			if($st->execute()){
-				$columns = $st->fetchAll();
+				$columns = $st->fetchAll(PDO::FETCH_ASSOC);
 				if(count($columns > 0)){
 					$this->columns = $columns;	
 				}
