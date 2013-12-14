@@ -16,9 +16,6 @@ define('VIEW_SUFFIX','.view.php');
 define('MODEL_DIR','models/');
 define('MODEL_SUFFIX','.class.php');
 
-define('DOMAIN_ID',1);
-define('DOMAIN_URL','bitcrypt.org');
-
 include_once("core/Controller.class.php");
 include_once("core/DbConnector.class.php");
 include_once("core/Model.class.php");
