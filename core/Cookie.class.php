@@ -7,7 +7,10 @@
 	 
 	 
 	class Cookie {
-		
+		/**
+		 * [$c_name description]
+		 * @var [type]
+		 */
 		private $c_name = null;
 		private $c_expire = null;
 		private $c_value = null;
@@ -20,6 +23,14 @@
 			}
 		}
 		
+		/**
+		 * [setCookie description]
+		 * @param [type] $c_name
+		 * @param [type] $c_value
+		 * @param [type] $c_expire
+		 * @param [type] $c_path
+		 * @param [type] $c_domain
+		 */
 		public function setCookie($c_name,$c_value,$c_expire =  null, $c_path = null, $c_domain = null){
 				$this->c_name = $c_name;
 				$this->c_value = $c_value;
@@ -38,7 +49,11 @@
 				return setcookie($c_name, $c_value,$c_expire,$c_path,$c_domain);
 		}
 		
-		
+		/**
+		 * [readCookie description]
+		 * @param  [type] $c_name
+		 * @return [type]
+		 */
 		public function readCookie($c_name){
 			if(isset($_COOKIE[$c_name])){
 				return $_COOKIE[$c_name];
@@ -47,6 +62,11 @@
 			}
 		}
 		
+		/**
+		 * [eraseCookie description]
+		 * @param  [type] $c_name
+		 * @return [type]
+		 */
 		public function eraseCookie($c_name){
 			if(isset($_COOKIE[$c_name])){
 				return setcookie($c_name, "", time()-3600);

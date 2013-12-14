@@ -5,6 +5,10 @@
  */
  
  	class Controller{
+ 		/**
+ 		 * [$db description]
+ 		 * @var [type]
+ 		 */
  		private $db = null;
 		private $template = null;
  		private $template_vars = array();
@@ -12,6 +16,13 @@
 			$this->db = $db;
  		}
 		
+		/**
+		 * [loadView description]
+		 * @param  [type]  $view
+		 * @param  [type]  $view_vars
+		 * @param  boolean $buffer
+		 * @return [type]
+		 */
 		public function loadView($view, $view_vars = null, $buffer = false){
 			/*
 			 * This is a mechanism to load the view we wish to display.
@@ -28,7 +39,11 @@
 			}
 		}
 		
-		
+		/**
+		 * [loadModel description]
+		 * @param  [type] $model
+		 * @return [type]
+		 */
 		public function loadModel($model){
 			/*
 			 * This is a mechanism to load the correct model
@@ -43,7 +58,11 @@
 			}			
 		}
 		
-				
+		/**
+		 * [redirect description]
+		 * @param  [type] $uri
+		 * @return [type]
+		 */
 		public function redirect($uri){
 			/*
 			 * a simple redirect (if we need it);

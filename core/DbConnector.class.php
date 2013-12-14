@@ -4,10 +4,18 @@
  * 
  */
 
+
  class DbConnector{
- 	
+ 	/**
+ 	 * [$db_handle description]
+ 	 * @var [type]
+ 	 */
 	public $db_handle;
 	
+	/**
+	 * [__construct description]
+	 * @param [type] $db_connection_array
+	 */
 	public function __construct($db_connection_array = null){
 		/*
 		 * The constructor for the object.  We pass it a user object so we can act upon that user.
@@ -15,11 +23,15 @@
 		 * $db_connection_array :: array :: an array can be passed so we can use it for the connection vars.
 		 * 
 		 */
-		$this->new_connection($db_connection_array);
+		$this->newConnection($db_connection_array);
 	}
 
-	
-	public function new_connection($db_connection_array = null){
+	/**
+	 * [new_connection description]
+	 * @param  [type] $db_connection_array
+	 * @return [type]
+	 */
+	public function newConnection($db_connection_array = null){
 		/*
 		 * We want this as a public function so we can call it if we want to connect using a different db etc
 		 * 
@@ -52,7 +64,9 @@
 			
 	}
 	
-	
+	/**
+	 * [__destruct description]
+	 */
 	public function __destruct(){
 		$this->db_handle = null;
 	}
