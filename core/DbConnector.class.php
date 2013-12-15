@@ -71,4 +71,3 @@
 		$this->db_handle = null;
 	}
  }
-?>

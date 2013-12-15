@@ -12,6 +12,10 @@
  		private $db = null;
 		private $template = null;
  		private $template_vars = array();
+ 		/**
+ 		 * [__construct description]
+ 		 * @param [type] $db
+ 		 */
  		public function __construct($db){
 			$this->db = $db;
  		}
@@ -71,4 +75,3 @@
 			die();
 		}
  	}
-?>
