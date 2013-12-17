@@ -8,6 +8,7 @@
  * 
  */
 	include_once('config.php'); 
+	include_once(CORE_DIR.'boot.php');
 	
 	
 	if(isset($_GET['route'])){ 

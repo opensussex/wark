@@ -16,8 +16,5 @@ define('VIEW_SUFFIX','.view.php');
 define('MODEL_DIR','models/');
 define('MODEL_SUFFIX','.class.php');
 
-include_once("core/Controller.class.php");
-include_once("core/DbConnector.class.php");
-include_once("core/Model.class.php");
-include_once("core/Cookie.class.php");
+define('CORE_DIR','/var/www/wark/core/');
 ?>
