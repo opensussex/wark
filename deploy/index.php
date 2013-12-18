@@ -20,10 +20,10 @@
 	
 	
 	//Load the controller
-	$controller_file = CONTROLLER_DIR.ucfirst($controller).CONTROLLER_SUFFIX;
+	$controller_file = DEPLOY_DIR . CONTROLLER_DIR.ucfirst($controller).CONTROLLER_SUFFIX;
 	
 	if(!file_exists($controller_file)){ // check to see if the controller file exists, if it doesn't then we load the 404 page.
-		$controller_file = CONTROLLER_DIR.'Fourofour'.CONTROLLER_SUFFIX;
+		$controller_file = DEPLOY_DIR . CONTROLLER_DIR.'Fourofour'.CONTROLLER_SUFFIX;
 		$controller = 'Fourofour';
 	}
 	

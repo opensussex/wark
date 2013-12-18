@@ -17,4 +17,5 @@ define('MODEL_DIR','models/');
 define('MODEL_SUFFIX','.class.php');
 
 define('CORE_DIR','/var/www/wark/core/');
+define('DEPLOY_DIR','/var/www/wark_deploy/');
 ?>
