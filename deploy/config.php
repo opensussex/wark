@@ -24,4 +24,6 @@ define('THIRD_PARTY_LIBS',serialize(array(
 	)));
 
 define('USE_RBPHP',true);
+
+define('PRODUCTION',false);
 ?>
