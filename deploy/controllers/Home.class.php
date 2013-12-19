@@ -15,7 +15,7 @@
 		
 		public function index(){// this is what we call
 			$view = 'home'; // set the home view.
-			//$user = $this->loadModel('VirtualUserModel'); // initiate the VirtualUserModel
+			$content_vars = null;
 			$this->loadView('header',array('meta_title'=> $this->meta_title)); 
 			$this->loadView($view,$content_vars);
 			$this->loadView('footer');

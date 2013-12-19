@@ -5,7 +5,7 @@ ini_set('error_reporting', E_ALL);
 
 	// database connectivity 
 define('DB_HOST','localhost');
-define('DB_NAME','dbname');
+define('DB_NAME','wark_deploy');
 define('DB_USERNAME','user');
 define('DB_PASSWORD','password');
 
