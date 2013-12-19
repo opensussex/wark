@@ -11,11 +11,21 @@
  */
 	class Home extends Controller{
 		
-		private $meta_title = 'Add User';
+		private $meta_title = 'Deploy Test with RedBeanPHP';
 		
 		public function index(){// this is what we call
 			$view = 'home'; // set the home view.
 			$content_vars = null;
+			try{
+				$user = R::dispense('user');
+				$user->username = 'Bob_Dobbs';
+	    		$user->email = 'bob@dobbs.com';
+	    		$user->password = 'G1veMeSlack';
+	    		$id = R::store($user);
+	    		echo $id;
+    		}catch(Exception $e){
+    			echo 'Caught exception: ',  $e->getMessage(), "\n";
+			}
 			$this->loadView('header',array('meta_title'=> $this->meta_title)); 
 			$this->loadView($view,$content_vars);
 			$this->loadView('footer');
