@@ -18,4 +18,10 @@ define('MODEL_SUFFIX','.class.php');
 
 define('CORE_DIR','/var/www/wark/core/');
 define('DEPLOY_DIR','/var/www/wark_deploy/');
+
+define('THIRD_PARTY_LIBS',serialize(array(
+		'/var/www/libs/redbeanphp/rb.php'
+	)));
+
+define('USE_RBPHP',true);
 ?>
