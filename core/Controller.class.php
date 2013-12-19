@@ -16,7 +16,7 @@
  		 * [__construct description]
  		 * @param [type] $db
  		 */
- 		public function __construct($db){
+ 		public function __construct($db =null){
 			$this->db = $db;
  		}
 		

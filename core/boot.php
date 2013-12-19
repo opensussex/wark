@@ -13,7 +13,7 @@
 	if(defined('USE_RBPHP')){
 		if(USE_RBPHP){
 			// we want to use RedBeanPHP as our ORM as such we want to see if we need to load some models.
-			
+			R::setup('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USERNAME,DB_PASSWORD);
 			if ($handle = opendir(DEPLOY_DIR . MODEL_DIR)) { // check the directory
 			    while (false !== ($entry = readdir($handle))) { // loop through the models and load them
 			        if ($entry != "." && $entry != "..") {
@@ -22,6 +22,12 @@
 			    }
 
 			    closedir($handle);
+			}
+
+			if(defined('PRODUCTION')){
+				if(PRODUCTION){
+					R::freeze( true );
+				}
 			}
 		}
 	}
@@ -41,9 +47,17 @@
 		$controller = 'Fourofour';
 	}
 	
-	$db = new DbConnector();
-	include_once($controller_file);
-	$ctrlObj = new $controller($db);
-	$ctrlObj->index();
+	if(USE_RBPHP){
+		include_once($controller_file);
+		$ctrlObj = new $controller();
+		$ctrlObj->index();
+	}else{
+		$db = new DbConnector();	
+		include_once($controller_file);
+		$ctrlObj = new $controller($db);
+		$ctrlObj->index();
+	}
+	
+
 
 ?>
