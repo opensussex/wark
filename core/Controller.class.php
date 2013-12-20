@@ -56,7 +56,14 @@
 			$model_file = DEPLOY_DIR . MODEL_DIR . $model . MODEL_SUFFIX;	// the file string.
 			if(file_exists($model_file)){ // check to see if it exists
 				require_once($model_file);
-				return new $model($this->db);
+				if(defined('USE_RBPHP')){
+					if(USE_RBPHP){
+						return new $model();
+					}
+				}else{
+					return new $model($this->db);	
+				}
+				
 			}else{
 				echo "model file does not exist :: $model_file";
 			}			
