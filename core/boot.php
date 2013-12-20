@@ -14,16 +14,6 @@
 		if(USE_RBPHP){
 			// we want to use RedBeanPHP as our ORM as such we want to see if we need to load some models.
 			R::setup('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USERNAME,DB_PASSWORD);
-			if ($handle = opendir(DEPLOY_DIR . MODEL_DIR)) { // check the directory
-			    while (false !== ($entry = readdir($handle))) { // loop through the models and load them
-			        if ($entry != "." && $entry != "..") {
-						include_once($lib);	            
-			        }
-			    }
-
-			    closedir($handle);
-			}
-
 			if(defined('PRODUCTION')){
 				if(PRODUCTION){
 					R::freeze( true );
