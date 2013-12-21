@@ -23,8 +23,17 @@
 	}
 
 	if(isset($_GET['route'])){ 
-		$route = $_GET['route'];
-		$controller = str_replace('.html','',$route);
+		$route = explode('/',$_GET['route']);
+		$controller = $route[0];
+		$method = null;
+		$method_val = null;
+		if(isset($route[1])){
+			$method = $route[1];
+		}
+
+		if(isset($route[2])){
+			$method_val = $route[2];
+		}
 	}else{
 		$controller = 'home'; // this is our default view if nothing is passed.
 	}	
@@ -40,13 +49,24 @@
 	if(USE_RBPHP){
 		include_once($controller_file);
 		$ctrlObj = new $controller();
-		$ctrlObj->index();
 	}else{
 		$db = new DbConnector();	
 		include_once($controller_file);
 		$ctrlObj = new $controller($db);
-		$ctrlObj->index();
 	}
+	if($method){
+		if(method_exists($ctrlObj,$method)){
+			$ctrlObj->$method($method_val);
+			exit();
+		}else{
+			$ctrlObj->index($method_val);
+		}
+		
+	}else{
+		$ctrlObj->index($method_val);	
+	}
+	
+
 	
 
 
