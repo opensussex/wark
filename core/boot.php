@@ -59,7 +59,7 @@
 			$ctrlObj->$method($method_val);
 			exit();
 		}else{
-			$ctrlObj->index($method_val);
+			$ctrlObj->index();
 		}
 		
 	}else{
