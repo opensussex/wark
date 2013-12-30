@@ -22,11 +22,12 @@
 		}
 	}
 
+	$method = null;
+	$method_val = null;
+
 	if(isset($_GET['route'])){ 
 		$route = explode('/',$_GET['route']);
 		$controller = $route[0];
-		$method = null;
-		$method_val = null;
 		if(isset($route[1])){
 			$method = $route[1];
 		}
