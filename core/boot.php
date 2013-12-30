@@ -4,6 +4,12 @@
 	include_once(CORE_DIR."DbConnector.class.php");
 	include_once(CORE_DIR."Model.class.php");
 
+	if(defined('UTILITY_LIBS')){
+		foreach(unserialize(UTILITY_LIBS) as $lib){
+			include_once(CORE_DIR . 'utilities/'.$lib);
+		}
+	}
+
 	if(defined('THIRD_PARTY_LIBS')){
 		foreach(unserialize(THIRD_PARTY_LIBS) as $lib){
 			include_once($lib);
