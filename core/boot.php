@@ -22,6 +22,12 @@
 		}
 	}
 
+	if(defined('DEPLOYED_LIBS')){
+		foreach(unserialize(DEPLOYED_LIBS) as $lib){
+			include_once($lib);
+		}	
+	}
+
 	$method = null;
 	$method_val = null;
 
