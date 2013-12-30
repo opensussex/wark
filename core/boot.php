@@ -78,9 +78,3 @@
 	}else{
 		$ctrlObj->index($method_val);	
 	}
-	
-
-	
-
-
-?>
