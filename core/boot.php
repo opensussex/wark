@@ -48,7 +48,12 @@
 			$method_val = $route[2];
 		}
 	}else{
-		$controller = 'home'; // this is our default view if nothing is passed.
+		if(defined('DEFAULT_CONTROLLER')){
+			$controller = DEFAULT_CONTROLLER;
+		}else{
+			$controller = 'home'; // this is our default view if nothing is passed.	
+		}
+		
 	}	
 
 	//Load the controller
