@@ -9,15 +9,14 @@
  		 * [$db description]
  		 * @var [type]
  		 */
- 		private $db = null;
 		private $template = null;
  		private $template_vars = array();
  		/**
  		 * [__construct description]
  		 * @param [type] $db
  		 */
- 		public function __construct($db =null){
-			$this->db = $db;
+ 		public function __construct(){
+			
  		}
 		
 		/**
@@ -55,15 +54,8 @@
 			$model = ucfirst($model);	// we want to upercase our model (if it isn't already');
 			$model_file = DEPLOY_DIR . MODEL_DIR . $model . MODEL_SUFFIX;	// the file string.
 			if(file_exists($model_file)){ // check to see if it exists
-				require_once($model_file);
-				if(defined('USE_RBPHP')){
-					if(USE_RBPHP){
-						return new $model();
-					}
-				}else{
-					return new $model($this->db);	
-				}
-				
+				require_once($model_file);	
+				return new $model();	
 			}else{
 				echo "model file does not exist :: $model_file";
 			}			

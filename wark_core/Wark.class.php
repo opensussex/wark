@@ -3,10 +3,9 @@
     class Wark
     {
 
-        private $db;
-        public function __construct($db)
+        public function __construct()
         {
-            $this->db = $db;
+
         }
 
         public function go($route)
@@ -42,7 +41,7 @@
             
             
             include_once($controller_file);
-            $ctrlObj = new $controller($this->db);
+            $ctrlObj = new $controller();
 
 
             if($method){

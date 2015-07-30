@@ -33,6 +33,9 @@
 		$route = $_GET['route'];
 	}
 
-	$db = new DbConnector();
-	$wark = new Wark($db);
+	ORM::configure('mysql:host='.DB_HOST.';dbname='.DB_NAME);
+	ORM::configure('username', DB_USERNAME);
+	ORM::configure('password', DB_PASSWORD);
+
+	$wark = new Wark();
 	$wark->go($route);

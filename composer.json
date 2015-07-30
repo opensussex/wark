@@ -11,6 +11,6 @@
         "psr-0": { "": "src" }
     },
     "require": {
-        
+        "j4mie/paris" : "~1.5.4"
     }
 }
