@@ -1,0 +1,16 @@
+{
+    "name": "wark",
+    "description": "Wark - micro mvc",
+    "license": "free software",
+    "type": "project",
+    "minimum-stability": "stable",
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": { "": "src" }
+    },
+    "require": {
+        
+    }
+}
