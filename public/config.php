@@ -5,9 +5,10 @@ ini_set('error_reporting', E_ALL);
 
 	// database connectivity 
 define('DB_HOST','localhost');
-define('DB_NAME','scotchbox');
+define('DB_NAME','wark');
 define('DB_USERNAME','root');
 define('DB_PASSWORD','root');
+
 
 define('CONTROLLER_DIR','controllers/');
 define('CONTROLLER_SUFFIX','.class.php');
