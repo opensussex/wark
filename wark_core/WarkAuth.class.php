@@ -14,7 +14,7 @@ class WarkAuth{
             $user = Sentinel::register($credentials);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -26,7 +26,7 @@ class WarkAuth{
             $user = Sentinel::registerAndActivate($credentials);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -38,7 +38,7 @@ class WarkAuth{
             $user = Sentinel::authenticate($credentials);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -49,7 +49,7 @@ class WarkAuth{
             $user = Sentinel::authenticateAndRemember($credentials);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -60,7 +60,7 @@ class WarkAuth{
             $user = Sentinel::forceAuthentication($credentials);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -71,7 +71,7 @@ class WarkAuth{
             $user = Sentinel::forceAuthenticationAndRemember($credentials);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -82,7 +82,7 @@ class WarkAuth{
             $user = Sentinel::check();
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -93,7 +93,7 @@ class WarkAuth{
             $user = Sentinel::guest();
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -104,7 +104,7 @@ class WarkAuth{
             $user = Sentinel::getUser();
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -115,7 +115,7 @@ class WarkAuth{
             $login = Sentinel::login($user,$remember);
             return $login;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }   
     }
@@ -132,7 +132,7 @@ class WarkAuth{
             $user = Sentinel::findById($id);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -143,7 +143,7 @@ class WarkAuth{
             $user = Sentinel::findByCredentials($credentials);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -154,7 +154,7 @@ class WarkAuth{
             $user = Sentinel::validateCredentials($credentials);
             return $user;
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -164,7 +164,7 @@ class WarkAuth{
         try{
             return Sentinel::validForCreation($credentials);
         }catch(Exception $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -175,7 +175,7 @@ class WarkAuth{
         try{
             return Sentinel::validForUpdate($user, $credentials);
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -185,7 +185,7 @@ class WarkAuth{
         try{
             return Sentinel::validForUpdate($credentials, $closure);
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -195,7 +195,7 @@ class WarkAuth{
         try{
             return Sentinel::update($user, $credentials);
         }catch(PDOException $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
@@ -205,7 +205,7 @@ class WarkAuth{
         try{
             $user->delete();
         }catch(Exception $e) {
-            echo $e->getMessage();
+            //echo $e->getMessage();
             return null;
         }
     }
