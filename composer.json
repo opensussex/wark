@@ -11,6 +11,7 @@
         "psr-0": { "": "src" }
     },
     "require": {
-        "j4mie/paris" : "~1.5.4"
+        "j4mie/paris" : "~1.5.4",
+        "cartalyst/sentinel" : "2.0.6"
     }
 }
