@@ -10,7 +10,6 @@ class WarkAuth{
 
     public function register(array $credentials)
     {
-         // Register a new user
         try{
             $user = Sentinel::register($credentials);
             return $user;
@@ -23,7 +22,6 @@ class WarkAuth{
 
     public function registerAndActivate(array $credentials)
     {
-         // Register and and Activate a user
         try{
             $user = Sentinel::registerAndActivate($credentials);
             return $user;
@@ -36,7 +34,6 @@ class WarkAuth{
 
     public function authenticate(array $credentials)
     {
-         // Register a new user
         try{
             $user = Sentinel::authenticate($credentials);
             return $user;
@@ -48,7 +45,6 @@ class WarkAuth{
 
     public function authenticateAndRemember(array $credentials)
     {
-         // Register a new user
         try{
             $user = Sentinel::authenticateAndRemember($credentials);
             return $user;
@@ -60,7 +56,6 @@ class WarkAuth{
 
     public function forceAuthentication(array $credentials)
     {
-         // Register a new user
         try{
             $user = Sentinel::forceAuthentication($credentials);
             return $user;
@@ -72,7 +67,6 @@ class WarkAuth{
 
     public function forceAuthenticationAndRemember(array $credentials)
     {
-         // Register a new user
         try{
             $user = Sentinel::forceAuthenticationAndRemember($credentials);
             return $user;
@@ -84,7 +78,6 @@ class WarkAuth{
 
     public function check()
     {
-         // Register a new user
         try{
             $user = Sentinel::check();
             return $user;
@@ -96,7 +89,6 @@ class WarkAuth{
 
     public function guest()
     {
-         // Register a new user
         try{
             $user = Sentinel::guest();
             return $user;
@@ -108,11 +100,81 @@ class WarkAuth{
 
     public function getUser()
     {
-         // Register a new user
         try{
             $user = Sentinel::getUser();
             return $user;
         }catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+    public function login(User $user,$remember = false)
+    {
+        try{
+            $login = Sentinel::login($user,$remember);
+            return $login;
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }   
+    }
+
+    public function logout()
+    {
+        // this terminates the session for the current logged in user.
+        return Sentinel::logout(null, true);
+    }
+
+    public function findById($id)
+    {
+        try{
+            $user = Sentinel::findById(int $id);
+            return $user;
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+    public function findByCredentials(array $credentials)
+    {
+        try{
+            $user = Sentinel::findByCredentials($credentials);
+            return $user;
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+    public function validateCredentials(array $credentials)
+    {
+        try{
+            $user = Sentinel::validateCredentials($credentials);
+            return $user;
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+    public function validForCreation(array $credentials)
+    {
+        try{
+            return Sentinel::validForCreation($credentials);
+        }catch(Exception $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+
+    public function validForUpdate(User $user, array $credentials)
+    {
+        try{
+            return Sentinel::validForUpdate($user, $credentials);
+        }catch(Exception $e) {
             echo $e->getMessage();
             return null;
         }
