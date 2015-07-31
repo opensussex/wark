@@ -81,4 +81,10 @@
 		{
 			return $this->warkAuth;
 		}
+
+
+		public function isLoggedIn()
+		{
+			return $this->warkAuth()->check();
+		}
  	}

@@ -15,6 +15,7 @@
         public function validate()
         {
             $warkAuth = new WarkAuth();
+            $content_vars = [];
             $credentials = [
                             'password'=>$_POST['password'],
                             'email'=>$_POST['email']
@@ -22,6 +23,9 @@
             if ($warkAuth->validForCreation($credentials)) {
                 if ($warkAuth->registerAndActivate($credentials)) {
                     $view = 'register_ok';
+                    if(!$warkAuth->authenticateAndRemember($credentials)) {
+                        $content_vars['error_msg'] = 'authentication failed';
+                    }
                 } else {
                     $view = 'register';
                     $content_vars['register_form'] = $this->registrationForm();
