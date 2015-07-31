@@ -12,14 +12,14 @@
  		 */
 		private $template = null;
  		private $template_vars = array();
- 		private $warkUser = null;
+ 		private $warkAuth = null;
 
  		/**
  		 * [__construct description]
  		 * @param [type] $db
  		 */
  		public function __construct(){
- 			$this->warkUser = new WarkUser();
+ 			$this->warkAuth = new WarkAuth();
  		}
 		
 		/**
@@ -77,8 +77,8 @@
 			die();
 		}
 
-		public function warkUser()
+		public function warkAuth()
 		{
-			return $this->warkUser;
+			return $this->warkAuth;
 		}
  	}

@@ -18,7 +18,7 @@
 		public function index(){// this is what we call
 			$view = 'home'; // set the home view.
 			$content_vars = null;
-			$this->warkUser()->register(['email'=>'opensussex@gmail.com','password'=>'tipple']);
+			$this->warkAuth()->register(['email'=>'opensussex@gmail.com','password'=>'tipple']);
 			$this->loadView('header',array('meta_title'=> $this->meta_title)); 
 			$this->loadView($view,$content_vars);
 			$this->loadView('footer');
