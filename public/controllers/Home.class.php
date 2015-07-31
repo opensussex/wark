@@ -1,16 +1,5 @@
 <?php
 
-
-/*
- * Controller for the Home Page
- * This controller will Check to see if an order has been made :
- * 1) Write Order to DB
- * 2) Remove Cookie
- * 
- * If no Order has been Made
- * 1) Display the viewed documents.
- * 
- */
 	class Home extends Controller{
 		
 		private $meta_title = 'Deploy Test with RedBeanPHP';
