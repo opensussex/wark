@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This is the core controller class this will be extended by other controllers.
  * 
@@ -11,12 +12,14 @@
  		 */
 		private $template = null;
  		private $template_vars = array();
+ 		private $warkUser = null;
+
  		/**
  		 * [__construct description]
  		 * @param [type] $db
  		 */
  		public function __construct(){
-			
+ 			$this->warkUser = new WarkUser();
  		}
 		
 		/**
@@ -72,5 +75,10 @@
 			 */	
 			header("location:index.php?route=$uri");
 			die();
+		}
+
+		public function warkUser()
+		{
+			return $this->warkUser;
 		}
  	}

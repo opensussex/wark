@@ -1,10 +1,29 @@
 <?php 
 
+// Import the necessary classes
+use Illuminate\Database\Capsule\Manager as Capsule;
+
+
     class Wark
     {
 
         public function __construct()
         {
+
+            // Setup a new Eloquent Capsule instance
+            $capsule = new Capsule;
+
+            $capsule->addConnection([
+                'driver'    =>  'mysql',
+                'host'      =>  DB_HOST,
+                'database'  =>  DB_NAME,
+                'username'  =>  DB_USERNAME,
+                'password'  =>  DB_PASSWORD,
+                'charset'   =>  'utf8',
+                'collation' =>  'utf8_unicode_ci',
+            ]);
+
+            $capsule->bootEloquent();
 
         }
 
