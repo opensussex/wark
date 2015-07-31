@@ -174,6 +174,36 @@ class WarkAuth{
     {
         try{
             return Sentinel::validForUpdate($user, $credentials);
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+    public function create(array $credentials, function $closure = null)
+    {
+        try{
+            return Sentinel::validForUpdate($credentials, $closure);
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+    public function update(User $user, array $credentials)
+    {
+        try{
+            return Sentinel::update($user, $credentials);
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+    public function delete(User $user)
+    {
+        try{
+            $user->delete());
         }catch(Exception $e) {
             echo $e->getMessage();
             return null;
