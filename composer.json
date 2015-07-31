@@ -12,6 +12,7 @@
     },
     "require": {
         "j4mie/paris" : "~1.5.4",
-        "cartalyst/sentinel" : "2.0.6"
+        "cartalyst/sentinel" : "2.0.6",
+        "illuminate/database" : "5.1.8"
     }
 }
