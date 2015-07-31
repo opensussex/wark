@@ -126,10 +126,10 @@ class WarkAuth{
         return Sentinel::logout(null, true);
     }
 
-    public function findById($id)
+    public function findById(int $id)
     {
         try{
-            $user = Sentinel::findById(int $id);
+            $user = Sentinel::findById($id);
             return $user;
         }catch(PDOException $e) {
             echo $e->getMessage();
@@ -180,7 +180,7 @@ class WarkAuth{
         }
     }
 
-    public function create(array $credentials, function $closure = null)
+    public function create(array $credentials, $closure = null)
     {
         try{
             return Sentinel::validForUpdate($credentials, $closure);
@@ -203,7 +203,7 @@ class WarkAuth{
     public function delete(User $user)
     {
         try{
-            $user->delete());
+            $user->delete();
         }catch(Exception $e) {
             echo $e->getMessage();
             return null;
