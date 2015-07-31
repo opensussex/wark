@@ -1,4 +1,4 @@
 wark
 ====
 
-Very lightweight MVC for organising work.  It has composer support for adding additional packages.
+A basic user subscription / management system to build projects on.
