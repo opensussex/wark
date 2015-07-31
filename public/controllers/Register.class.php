@@ -9,6 +9,7 @@
             $content_vars = null;
             //$this->warkAuth()->register(['email'=>'opensussex@gmail.com','password'=>'tipple']);
             $warkForm = new WarkForm();
+            $warkForm->removeTable();
             $warkForm->form->setAction('register/validate');
             $warkForm->form->setMethod('POST');
             $warkForm->form->addText('email','Email Address');
