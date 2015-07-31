@@ -23,13 +23,8 @@
 
         public function validate()
         {
-            $warkForm = new WarkForm();
-            if ($warkForm->form->isSuccess()) {
-                echo 'Form was filled and submitted successfully';
+            d($_POST);
 
-                $values = $warkForm->form->getValues();
-                var_dump($values);
-            }
         }
     
     }
