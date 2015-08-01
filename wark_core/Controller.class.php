@@ -73,7 +73,7 @@
 			/*
 			 * a simple redirect (if we need it);
 			 */	
-			header("location:index.php?route=$uri");
+			header("location:$uri");
 			die();
 		}
 

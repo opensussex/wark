@@ -8,7 +8,7 @@
             if ($this->isLoggedIn()) {
                 echo 'LOGGED IN';
             } else {
-                echo 'NO ACCESS';
+                $this->redirect('/login');
             }
         }
 

@@ -1,4 +1,4 @@
-<h1>You're in</h1>
+<h1>Login!</h1>
 <?php
     if (isset($view_vars['error_msg'])) {
 
@@ -7,4 +7,4 @@
 <?php
     }
 ?>
-<p>click <a href="/profile">here</a></p>
+<?=$view_vars['login_form']?>

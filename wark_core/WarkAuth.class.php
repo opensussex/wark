@@ -109,7 +109,7 @@ class WarkAuth{
         }
     }
 
-    public function login(User $user,$remember = false)
+    public function login($user,$remember = false)
     {
         try{
             $login = Sentinel::login($user,$remember);
@@ -170,7 +170,7 @@ class WarkAuth{
     }
 
 
-    public function validForUpdate(User $user, array $credentials)
+    public function validForUpdate($user, array $credentials)
     {
         try{
             return Sentinel::validForUpdate($user, $credentials);
@@ -190,7 +190,7 @@ class WarkAuth{
         }
     }
 
-    public function update(User $user, array $credentials)
+    public function update($user, array $credentials)
     {
         try{
             return Sentinel::update($user, $credentials);
@@ -200,7 +200,7 @@ class WarkAuth{
         }
     }
 
-    public function delete(User $user)
+    public function delete($user)
     {
         try{
             $user->delete();
