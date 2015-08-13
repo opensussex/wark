@@ -87,4 +87,10 @@
 		{
 			return $this->warkAuth()->check();
 		}
+
+		public function jsonResponse(array $output)
+		{
+			header('Content-Type: application/json');
+			echo json_encode($output);
+		}
  	}
