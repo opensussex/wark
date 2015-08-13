@@ -58,7 +58,7 @@
 			$model_file = DEPLOY_DIR . MODEL_DIR . $model . MODEL_SUFFIX;	// the file string.
 			if(file_exists($model_file)){ // check to see if it exists
 				require_once($model_file);	
-				return new $model();	
+				return Model::factory($model);	
 			}else{
 				echo "model file does not exist :: $model_file";
 			}			
