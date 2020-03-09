@@ -1,5 +1,5 @@
 <?php
-namespace Wark;
+namespace Wark\Wark;
 
 class Router
 {

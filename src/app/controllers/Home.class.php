@@ -1,5 +1,7 @@
 <?php
-use Wark\Controller;
+namespace Wark\App\Controllers;
+
+use Wark\Wark\Controller;
 
 class Home extends Controller
 {

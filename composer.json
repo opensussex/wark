@@ -1,6 +1,9 @@
 {
     "autoload": {
-        "psr-0": { "Wark": "src/" }
+        "psr-0": { 
+        "Wark": "src/",
+        "Wark\\App\\": "src/app/"
+    }
     },
     "require": {
     }

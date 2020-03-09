@@ -1,8 +1,8 @@
 <?php
 require 'vendor/autoload.php';
 
-use Wark\App;
-use Wark\Router;
+use Wark\Wark\App;
+use Wark\Wark\Router;
 
 $coreDir = CORE_DIR;
 

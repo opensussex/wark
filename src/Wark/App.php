@@ -1,5 +1,5 @@
 <?php
-namespace Wark;
+namespace Wark\Wark;
 
 class App
 {
@@ -31,15 +31,13 @@ class App
                 $controller = 'home';
             }
         }
-        $controller_file = DEPLOY_DIR . CONTROLLER_DIR.ucfirst($controller).CONTROLLER_SUFFIX;
 
-        if (!file_exists($controller_file)) {
-            $controller_file = DEPLOY_DIR . CONTROLLER_DIR.'Fourofour'.CONTROLLER_SUFFIX;
-            $controller = 'Fourofour';
+        $controller = ucfirst($controller);
+        $controller = "\\Wark\\App\\Controllers\\$controller";
+
+        if (!class_exists($controller)) {
+            $controller = '\\Wark\\App\\Controllers\\Fourofour';
         }
-
-
-        include_once($controller_file);
         $ctrlObj = new $controller();
 
 

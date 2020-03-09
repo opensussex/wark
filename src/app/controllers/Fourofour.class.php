@@ -1,5 +1,7 @@
 <?php
-use Wark\Controller;
+namespace Wark\App\Controllers;
+
+use Wark\Wark\Controller;
 
 /*
 * Simple Controller to deal with any 404 page not found.

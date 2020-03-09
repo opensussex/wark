@@ -1,4 +1,5 @@
 <?php
+namespace Wark\App\Models;
 
 use Wark\Model;
 
