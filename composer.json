@@ -1,24 +1,7 @@
 {
-    "name": "wark",
-    "description": "Wark - micro mvc",
-    "license": "free software",
-    "type": "project",
-    "minimum-stability": "stable",
-    "config": {
-        "bin-dir": "bin"
-    },
     "autoload": {
-        "psr-0": { "": "src" }
-    },
-    "require-dev": {
-        "raveren/kint": "dev-master"
+        "psr-0": { "Wark": "src/" }
     },
     "require": {
-        "j4mie/paris" : "~1.5.4",
-        "cartalyst/sentinel" : "2.0.6",
-        "illuminate/database" : "5.1.8",
-        "illuminate/events" : "5.1.8",
-        "symfony/http-foundation" : "2.7.2",
-        "nette/forms" : "2.3.4"
     }
 }

@@ -1,0 +1,75 @@
+html{
+    font-family: Raleway;
+}
+
+
+.uk-container {
+    max-width: 1450px;
+}
+
+#scrum_board .product-backlog{
+    font-family: Raleway;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px #ddd dashed;
+    border-bottom: 1px #ddd dashed;
+}
+
+#scrum_board .product-backlog .product-backlog-add-item{
+        border: 2px #ddd dashed;
+        cursor: pointer;
+}
+
+#scrum_board .uk-sortable .uk-panel{
+    -webkit-box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+}
+
+#scrum_board .uk-accordion-title {
+    font-family: Raleway;
+    font-size: 15px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    margin-bottom: 0px;
+}
+
+
+#scrum_board .story-controls{
+    border-top: 1px solid #aaa;
+    border-top: none;
+    padding: 3px;
+}
+
+
+#scrum_board .uk-accordion {
+    margin-bottom: 0px;
+}
+
+.sprint-story{
+    -webkit-box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+
+}
+
+#scrum_board .uk-accordion .uk-accordion-content {
+    padding-top: 10px;
+}
+
+#scrum_board .uk-dropdown {
+    font-family: Raleway;
+    -webkit-box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+}
+
+.uk-navbar a{
+    font-family: Raleway !important;
+}
+
+#scrum_board h1, h2, h3, h4, h5, h6{
+    font-family: Raleway !important;
+}
