@@ -10,6 +10,6 @@ define('VIEW_SUFFIX', '.view.php');
 define('MODEL_DIR', 'models/');
 define('MODEL_SUFFIX', '.class.php');
 
-define('CORE_DIR',dirname(__FILE__) . '/../');
-define('DEPLOY_DIR','');
-define('PRODUCTION',false);
+define('CORE_DIR', dirname(__FILE__) . '/../');
+define('DEPLOY_DIR', '');
+define('PRODUCTION', false);

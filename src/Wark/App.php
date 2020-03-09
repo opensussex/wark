@@ -16,7 +16,6 @@ class App
         $method = null;
         $method_val = null;
         if ($this->route) {
-            //$route = explode('/',$_GET['route']);
             $controller = $this->route[0];
             if (isset($this->route[1])) {
                 $method = $this->route[1];
@@ -29,15 +28,12 @@ class App
             if (defined('DEFAULT_CONTROLLER')) {
                 $controller = DEFAULT_CONTROLLER;
             } else {
-                $controller = 'home'; // this is our default view if nothing is passed.
+                $controller = 'home';
             }
-
         }
-        //Load the controller
         $controller_file = DEPLOY_DIR . CONTROLLER_DIR.ucfirst($controller).CONTROLLER_SUFFIX;
 
         if (!file_exists($controller_file)) {
-            // check to see if the controller file exists, if it doesn't then we load the 404 page.
             $controller_file = DEPLOY_DIR . CONTROLLER_DIR.'Fourofour'.CONTROLLER_SUFFIX;
             $controller = 'Fourofour';
         }
@@ -54,7 +50,6 @@ class App
             } else {
                 $ctrlObj->index();
             }
-
         } else {
             $ctrlObj->index($method_val);
         }
