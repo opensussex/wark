@@ -40,23 +40,6 @@ class Controller
     }
 
     /**
-     * [loadModel description]
-     * @param  [type] $model
-     * @return [type]
-     */
-    public function loadModel($model)
-    {
-        $model = ucfirst($model);
-        $model_file = DEPLOY_DIR . MODEL_DIR . $model . MODEL_SUFFIX;
-        if (file_exists($model_file)) {
-            require_once($model_file);
-            return new $model();
-        } else {
-            throw new \Exception("model file does not exist :: $model_file");
-        }
-    }
-
-    /**
      * [redirect description]
      * @param  [type] $uri
      * @return [type]
