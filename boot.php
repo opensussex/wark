@@ -6,7 +6,7 @@ use Wark\Wark\Router;
 
 $coreDir = CORE_DIR;
 
-$route = null;
+$route = '';
 
 if (isset($_GET['route'])) {
     $route = $_GET['route'];

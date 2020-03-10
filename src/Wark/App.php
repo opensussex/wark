@@ -10,9 +10,9 @@ class App
     /**
      * Constructs a new instance.
      *
-     * @param      string  $route  The route
+     * @param      array  $route  The route
      */
-    public function __construct(string $route)
+    public function __construct(array $route)
     {
         $this->route = $route;
     }

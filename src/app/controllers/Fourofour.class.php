@@ -14,6 +14,7 @@ class Fourofour extends Controller
 
     public function index()
     {
+        $this->sendHeader(404);
         $this->loadView('header', array('meta_title'=> $this->meta_title));
         $this->loadView('fourofour');
         $this->loadView('footer');

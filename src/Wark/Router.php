@@ -13,7 +13,7 @@ class Router
      * @param      string  $route          The route
      * @param      array   $definedRoutes  The defined routes
      */
-    public function __construct(string $route, array $definedRoutes)
+    public function __construct(string $route = '', array $definedRoutes = [])
     {
         $this->route = $route;
         $this->definedRoutes = $definedRoutes;

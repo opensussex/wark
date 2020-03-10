@@ -41,6 +41,7 @@ class Controller
         } else {
             throw new \Exception("view file does not exist :: $view");
         }
+        return '';
     }
 
 
@@ -59,14 +60,22 @@ class Controller
     }
 
 
+
     /**
-     * send json Response
+     * send json response
      *
-     * @param      array  $output  The output
+     * @param      array    $output  The output
+     * @param      integer  $code    The code
      */
-    public function jsonResponse(array $output)
+    public function jsonResponse(array $output, int $code = 200)
     {
         header('Content-Type: application/json');
+        header('X-PHP-Response-Code: '. $code, true, $code);
         echo json_encode($output);
+    }
+
+    public function sendHeader(int $code = 200)
+    {
+        header('X-PHP-Response-Code: '. $code, true, $code);
     }
 }
