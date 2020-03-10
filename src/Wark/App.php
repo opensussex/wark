@@ -23,7 +23,6 @@ class App
      */
     public function go()
     {
-
         $method = null;
         $methodVal = null;
         if ($this->route) {

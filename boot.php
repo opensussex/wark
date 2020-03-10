@@ -13,5 +13,6 @@ if (isset($_GET['route'])) {
 }
 
 session_start();
-$app = new App((new Router($route, $definedRoutes))->checkRoutes($route));
+$router = new Router($route, $definedRoutes);
+$app = new App($router->checkRoutes($route));
 $app->go();

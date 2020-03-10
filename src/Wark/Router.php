@@ -29,9 +29,36 @@ class Router
      */
     public function checkRoutes(string $route) : array
     {
-        if (isset($this->definedRoutes[$route])) {
-            return $this->definedRoutes[$route];
+        $explodedRoute = explode('/', $route);
+        if (isset($explodedRoute[1])) {
+            $pattern = '/('.$explodedRoute[0].')\/('.$explodedRoute[1].')/';
+            if ($routeIndex = $this->checkKeyExists($pattern, $this->definedRoutes)) {
+                if (isset($explodedRoute[2])) {
+                    array_push($this->definedRoutes[$routeIndex], $explodedRoute[2]);
+                }
+                return $this->definedRoutes[$routeIndex];
+            }
         }
-        return explode('/', $route);
+        return $explodedRoute;
+    }
+
+
+    /**
+     * Determines if check key exists.
+     *
+     * @param      string  $pattern        The pattern
+     * @param      array   $definedRoutes  The defined routes
+     *
+     * @return     mix   string if true, False otherwise.
+     */
+    private function checkKeyExists(string $pattern, array $definedRoutes)
+    {
+        $keys = array_keys($definedRoutes);
+        foreach ($keys as $key) {
+            if (preg_match($pattern, $key)) {
+                return $key;
+            }
+        }
+        false;
     }
 }
