@@ -10,6 +10,11 @@ for people to create their applications with out the hassle of over complication
 
 This has been tested with PHP 7.4 - it should be downward compatible, but we're aiming for 7.4.
 
+Wark will be using a choice few packages - ideally keeping to a minimum, and onces with very few
+depencies.
+
+For Storage / Db access - we're going with https://doc.nette.org/en/3.0/database-core
+
 to get it up and running 
 
 `composer install`
