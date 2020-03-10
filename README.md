@@ -27,3 +27,6 @@ So the framework will look for the controller method and then pass any variable.
 you can also edit the `src/app/routes.php` file for any routes you want to break out of the pattern above.
 
 Over time we will add to this framework.
+
+A note - if you add any new classes such as Controllers, or Models - then please run 
+`composer dump-autoload -o`
