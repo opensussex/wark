@@ -25,7 +25,7 @@ class App
     {
 
         $method = null;
-        $method_val = null;
+        $methodVal = null;
         if ($this->route) {
             $controller = $this->route[0];
             if (isset($this->route[1])) {
@@ -33,7 +33,7 @@ class App
             }
 
             if (isset($this->route[2])) {
-                $method_val = $this->route[2];
+                $methodVal = $this->route[2];
             }
         } else {
             if (defined('DEFAULT_CONTROLLER')) {
@@ -54,13 +54,13 @@ class App
 
         if ($method) {
             if (method_exists($ctrlObj, $method)) {
-                $ctrlObj->$method($method_val);
+                $ctrlObj->$method($methodVal);
                 exit();
             } else {
                 $ctrlObj->index();
             }
         } else {
-            $ctrlObj->index($method_val);
+            $ctrlObj->index($methodVal);
         }
     }
 }

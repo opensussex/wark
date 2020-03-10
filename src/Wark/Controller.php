@@ -4,11 +4,6 @@ namespace Wark\Wark;
 class Controller
 {
 
-    private $template = null;
-    private $template_vars = array();
-
-
-
     /**
      * Constructs a new instance.
      */
@@ -29,14 +24,14 @@ class Controller
      *
      * @return     string
      */
-    public function loadView(string $view, array $view_vars = null, bool $buffer = false) : string
+    public function loadView(string $view, array $viewVars = null, bool $buffer = false) : string
     {
-        $view_file = DEPLOY_DIR . VIEW_DIR . $view . VIEW_SUFFIX;
-        if (file_exists($view_file)) {
+        $viewFile = DEPLOY_DIR . VIEW_DIR . $view . VIEW_SUFFIX;
+        if (file_exists($viewFile)) {
             if ($buffer == true) {
-                return file_get_contents($view_file);
+                return file_get_contents($viewFile);
             } else {
-                require_once($view_file);
+                require_once($viewFile);
             }
         } else {
             throw new \Exception("view file does not exist :: $view");
