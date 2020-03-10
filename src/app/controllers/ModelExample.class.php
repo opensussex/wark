@@ -11,6 +11,7 @@ class ModelExample extends Controller
     public function index()
     {
         $model = $this->loadModel('Example');
-        dump($model);
+        $model->createTable();
+        dump($model->getTable());
     }
 }

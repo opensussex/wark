@@ -4,7 +4,7 @@ namespace Wark\Wark;
 class Model
 {
 
-	private $db = null;
+	public $db = null;
     /**
      * Constructs a new instance.
      */
