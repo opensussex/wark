@@ -3,29 +3,33 @@ namespace Wark\Wark;
 
 class Controller
 {
-    /**
-     * [$db description]
-     * @var [type]
-     */
+
     private $template = null;
     private $template_vars = array();
+
+
+
     /**
-     * [__construct description]
-     * @param [type] $db
+     * Constructs a new instance.
      */
     public function __construct()
     {
         //
     }
 
+
     /**
-     * [loadView description]
-     * @param  [type]  $view
-     * @param  [type]  $view_vars
-     * @param  boolean $buffer
-     * @return [type]
+     * Loads a view.
+     *
+     * @param      string      $view       The view
+     * @param      array       $view_vars  The view variables
+     * @param      boolean     $buffer     The buffer
+     *
+     * @throws     \Exception
+     *
+     * @return     string
      */
-    public function loadView($view, $view_vars = null, $buffer = false)
+    public function loadView(string $view, array $view_vars = null, bool $buffer = false) : string
     {
         $view_file = DEPLOY_DIR . VIEW_DIR . $view . VIEW_SUFFIX;
         if (file_exists($view_file)) {
@@ -39,12 +43,13 @@ class Controller
         }
     }
 
+
     /**
-     * [redirect description]
-     * @param  [type] $uri
-     * @return [type]
+     * redirect
+     *
+     * @param      string  $uri    The uri
      */
-    public function redirect($uri)
+    public function redirect(string $uri)
     {
         /*
          * a simple redirect (if we need it);
@@ -53,6 +58,12 @@ class Controller
         die();
     }
 
+
+    /**
+     * send json Response
+     *
+     * @param      array  $output  The output
+     */
     public function jsonResponse(array $output)
     {
         header('Content-Type: application/json');

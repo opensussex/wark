@@ -5,11 +5,22 @@ class App
 {
 
     private $route = null;
-    public function __construct($route)
+
+
+    /**
+     * Constructs a new instance.
+     *
+     * @param      string  $route  The route
+     */
+    public function __construct(string $route)
     {
         $this->route = $route;
     }
 
+
+    /**
+     * start of the application
+     */
     public function go()
     {
 
