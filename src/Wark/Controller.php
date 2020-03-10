@@ -4,12 +4,14 @@ namespace Wark\Wark;
 class Controller
 {
 
+    private $db;
+
     /**
      * Constructs a new instance.
      */
-    public function __construct()
+    public function __construct($db)
     {
-        //
+        $this->db = $db;
     }
 
 
@@ -37,6 +39,17 @@ class Controller
             throw new \Exception("view file does not exist :: $view");
         }
         return '';
+    }
+
+    public function loadModel(string $modelName)
+    {
+        $model = ucfirst($modelName);
+        $model = "\\Wark\\App\\Models\\$modelName";
+        if (!class_exists($model)) {
+            throw new \Exception('Model not found');
+        }
+
+        return new $model($this->db);
     }
 
 

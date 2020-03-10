@@ -13,3 +13,5 @@ define('MODEL_SUFFIX', '.class.php');
 define('CORE_DIR', dirname(__FILE__) . '/../../');
 define('DEPLOY_DIR', '');
 define('PRODUCTION', false);
+
+define('SQLITE_FILE', dirname(__FILE__) . '/../../storage/storage.sqlite3');

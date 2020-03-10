@@ -5,6 +5,7 @@ class App
 {
 
     private $route = null;
+    private $db = null;
 
 
     /**
@@ -12,9 +13,10 @@ class App
      *
      * @param      array  $route  The route
      */
-    public function __construct(array $route)
+    public function __construct(array $route, $db)
     {
         $this->route = $route;
+        $this->db = $db;
     }
 
 
@@ -48,7 +50,7 @@ class App
         if (!class_exists($controller)) {
             $controller = '\\Wark\\App\\Controllers\\Fourofour';
         }
-        $ctrlObj = new $controller();
+        $ctrlObj = new $controller($this->db);
 
 
         if ($method) {

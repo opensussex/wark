@@ -14,5 +14,7 @@ if (isset($_GET['route'])) {
 
 session_start();
 $router = new Router($route, $definedRoutes);
-$app = new App($router->checkRoutes($route));
+$database = new Nette\Database\Connection('sqlite:'.SQLITE_FILE, '', '');
+$app = new App($router->checkRoutes($route), $database);
 $app->go();
+
