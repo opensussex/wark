@@ -1,6 +1,8 @@
 <?php
 require 'vendor/autoload.php';
 
+$classMap = array_keys(require('vendor/composer/autoload_classmap.php'));
+
 use Wark\Wark\App;
 use Wark\Wark\Router;
 

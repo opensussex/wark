@@ -1,9 +1,9 @@
 {
     "autoload": {
-        "psr-0": { 
-        "Wark": "src/",
-        "Wark\\App\\": "src/app/"
-    }
+        "psr-4": {
+            "Wark\\": "src/",
+            "App\\": "src/App/"
+        }
     },
     "require": {
         "nette/database": "^3.0"

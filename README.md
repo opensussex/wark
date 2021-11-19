@@ -15,13 +15,11 @@ depencies.
 
 For Storage / Db access - we're going with https://doc.nette.org/en/3.0/database-core
 
-to get it up and running 
+Dev Environment
 
-`composer install`
-
-in the public directory 
-
-`php -S localhost:5678`
+docker is being used so you can run `./build.sh` and point your browser at `localhost`
+once it's been built for the first time you can just use `./start.sh` or `./stop.sh`
+`./down.sh` clears up docker so you can do a clearn build.
 
 Routes are as follows 
 
@@ -29,7 +27,7 @@ Routes are as follows
 
 So the framework will look for the controller method and then pass any variable.
 
-you can also edit the `src/app/routes.php` file for any routes you want to break out of the pattern above.
+you can also edit the `src/App/routes.php` file for any routes you want to break out of the pattern above.
 
 Over time we will add to this framework.
 
