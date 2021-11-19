@@ -25,6 +25,9 @@ Routes are as follows
 
 `?route=controller/method/var`
 
+you can also use `/controller/method/var` 
+
+
 So the framework will look for the controller method and then pass any variable.
 
 you can also edit the `src/App/routes.php` file for any routes you want to break out of the pattern above.
